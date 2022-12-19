@@ -5,6 +5,8 @@ DATE="`date +%Y%m%d%H%M`"
 
 #kubectl -n neuvector exec -it neuvector-manager-pod-name -- cli
 ##neuvector-svc-controller.neuvector> login
+# set debug #
+# set system controller_debug -c cpath
 #admin#neuvector-svc-controller.neuvector> show controller
 #admin#neuvector-svc-controller.neuvector> request controller <controller_id> profile -c all
 #admin#neuvector-svc-controller.neuvector> show enforcer
@@ -18,5 +20,5 @@ DATE="`date +%Y%m%d%H%M`"
 for i in `kubectl get pods -n neuvector | egrep "controller|enforcer" | awk '{print $1}'`;do kubectl -n neuvector cp $i:/var/neuvector/profile $i.profile_$DATE; done
 
 
-
-
+# disbale debug 
+# set system controller_debug 
